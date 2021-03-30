@@ -1,4 +1,4 @@
-import example_code
+from src.code import example_code
 
 
 def test_append_list():
