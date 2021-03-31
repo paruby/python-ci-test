@@ -12,8 +12,8 @@ def test_append_list(input_list, elem):
     assert example_code.append_list(input_list, elem) == _input_list + [elem]
 
 
-@given(input=lists(integers()).map(sorted))
-def test_merge_sort(input):
-    _input = deepcopy(input)
-    random.shuffle(input)
-    assert example_code.merge_sort(input=input) == _input
+@given(unsorted=lists(integers()).map(sorted))
+def test_merge_sort(unsorted):
+    _unsorted = deepcopy(unsorted)
+    random.shuffle(unsorted)
+    assert example_code.merge_sort(unsorted=unsorted) == _unsorted

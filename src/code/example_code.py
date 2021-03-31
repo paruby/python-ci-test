@@ -6,12 +6,12 @@ def append_list(input_list: List, elem: Any) -> List:
     return input_list
 
 
-def merge_sort(input: List[int]) -> List[int]:
-    if len(input) in [0, 1]:
-        return input
+def merge_sort(unsorted: List[int]) -> List[int]:
+    if len(unsorted) in [0, 1]:
+        return unsorted
     else:
-        left = merge_sort(input[0: len(input)//2])
-        right = merge_sort(input[len(input)//2:])
+        left = merge_sort(unsorted[0: len(unsorted)//2])
+        right = merge_sort(unsorted[len(unsorted)//2:])
 
         merged = []
         pl, pr = 0, 0
