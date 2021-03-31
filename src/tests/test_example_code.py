@@ -13,9 +13,9 @@ def test_append_list(input_list, elem):
     assert example_code.append_list(input_list, elem) == _input_list + [elem]
 
 
-@given(positive_ints=lists(integers(min_value=0)))
-def test_merge_sort(positive_ints):
-    _sorted = list(accumulate(positive_ints))
+@given(positive_ints=lists(integers(min_value=0)), start=integers())
+def test_merge_sort(positive_ints, start):
+    _sorted = [start + i for i in accumulate(positive_ints)]
     unsorted = deepcopy(_sorted)
     random.shuffle(unsorted)
     assert example_code.merge_sort(unsorted=unsorted) == _sorted
